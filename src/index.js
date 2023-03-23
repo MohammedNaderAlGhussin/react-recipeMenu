@@ -1,13 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { RecipeContextProvider } from "./Context/RecipeContext";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import RecipeDetails from "./Pages/RecipeDetails";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <RecipeContextProvider>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/recipe/:recipeId" element={<RecipeDetails />} />
+        </Routes>
+      </RecipeContextProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
