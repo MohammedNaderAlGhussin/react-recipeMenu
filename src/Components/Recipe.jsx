@@ -3,17 +3,13 @@ import { Link } from "react-router-dom";
 const Recipe = ({ title, image, calories, mealType, cuisineType, id }) => {
   return (
     <div className="recipe flex flex-col gap-2 pb-4 shadow-xl duration-300  border-2 border-[#444939] w-fit bg-[#c7bd84] overflow-hidden rounded-[10px]">
-      <img
-        className="recipe-img "
-        src={image}
-        alt=""
-      />
-      <div className="font-bold text-[#333] mt-2">{title}</div>
+      <img className="recipe-img " src={image} alt="" />
+      <div className="font-bold text-[#333] px-1 mt-2 max-w-[300px]">{title}</div>
       <div className="text-[#333]">
         <span className="font-bold">Calories: </span> {calories.toFixed(2)}
       </div>
       <div className="text-[#333]">
-        <span className="font-bold ">Meal Type:</span> {mealType}
+        <span className="font-bold ">Meal Type:</span> {mealType} 
       </div>
       <div className="text-[#333]">
         <span className="font-bold ">Cuisine Type:</span> {cuisineType}
